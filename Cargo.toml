@@ -1,7 +1,12 @@
 [package]
 authors = ["Aiden Langley <me@aidenlangley.com>"]
+description = "Kōrero means to talk, speak or converse in Māori. This crate is a library for interfacing with things, just as kōrero helps people interface with one another."
+documentation = "https://github.com/aidenlangley/korero"
 edition = "2018"
+homepage = "https://github.com/aidenlangley/korero"
+license = "MIT OR Apache-2.0"
 name = "korero"
+repository = "https://github.com/aidenlangley/korero"
 version = "0.1.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
