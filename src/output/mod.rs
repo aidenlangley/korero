@@ -2,13 +2,12 @@ pub mod logger;
 pub mod terminal;
 pub mod verbosity;
 
-use console::style;
-
 use self::{
     logger::{Logger, Logs, Prints},
     terminal::Terminal,
     verbosity::{MinVerbosity, Verbose, Verbosity},
 };
+use console::style;
 use std::io::Write;
 
 #[derive(Debug, Clone, Copy)]

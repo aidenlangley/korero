@@ -1,9 +1,9 @@
 //! Kōrero, a communication library. Contains code that I find myself copying
 //! and pasting often.
 //!
-//! # [TerminalLogger](https://docs.rs/korero/latest/korero/output/struct.TerminalLogger.html)
-//! Provides a `TerminalLogger` to use out of the box. Construction requires a
-//! [`Verbosity`](https://docs.rs/korero/latest/korero/output/verbosity/enum.Verbosity.html)
+//! # TerminalLogger
+//! Provides a [`TerminalLogger`](https://docs.rs/korero/latest/korero/output/struct.TerminalLogger.html)
+//! to use out of the box. Construction requires a [`Verbosity`](https://docs.rs/korero/latest/korero/output/verbosity/enum.Verbosity.html)
 //! level to make use of [`MinVerbosity`](https://docs.rs/korero/latest/korero/output/verbosity/trait.MinVerbosity.html)
 //! checks.
 //!
