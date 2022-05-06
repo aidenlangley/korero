@@ -174,7 +174,7 @@ mod tests {
     fn term_log_ok() {
         let term = TerminalLogger::default();
         if let Err(e) = term.log("Testing term logs!") {
-            assert!(false, "{}", e)
+            panic!("{}", e)
         }
     }
 
@@ -182,6 +182,6 @@ mod tests {
     fn term_log_err() {
         let term = TerminalLogger::new().with_verbosity(Some(Verbosity::High));
         assert_ne!(term.verbosity(), Some(Verbosity::Debug));
-        assert_eq!(term.verbose_enough(), false);
+        assert!(!term.verbose_enough());
     }
 }

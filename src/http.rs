@@ -82,7 +82,7 @@ impl Reqwest {
     pub fn add_body<T: Serialize>(&mut self, model: T) -> &mut Self {
         let json =
             to_string(&model).expect("failed to serialize model to JSON");
-        self.req_builder = Some(self.get_req_builder().body(json.to_owned()));
+        self.req_builder = Some(self.get_req_builder().body(json));
         self
     }
 

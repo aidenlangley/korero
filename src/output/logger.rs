@@ -109,7 +109,7 @@ mod tests {
     fn prints_str_stdout() {
         let logger = Logger {};
         if let Err(e) = logger.write_line("Testing prints &str to stdout!") {
-            assert!(false, "{}", e)
+            panic!("{}", e)
         }
     }
 
@@ -117,7 +117,7 @@ mod tests {
     fn prints_str_stderr() {
         let logger = Logger {};
         if let Err(e) = logger.write_line("Testing prints &str to stderr!") {
-            assert!(false, "{}", e)
+            panic!("{}", e)
         }
     }
 
@@ -127,7 +127,7 @@ mod tests {
         if let Err(e) =
             logger.write_line(b"Testing prints &[u8] to stdout!".as_slice())
         {
-            assert!(false, "{}", e)
+            panic!("{}", e)
         }
     }
 
@@ -137,7 +137,7 @@ mod tests {
         if let Err(e) =
             logger.write_line(b"Testing prints &[u8] to stderr!".as_slice())
         {
-            assert!(false, "{}", e)
+            panic!("{}", e)
         }
     }
 }

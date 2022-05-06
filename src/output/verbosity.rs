@@ -110,6 +110,6 @@ mod tests {
     fn not_verbose_enough() {
         let nv = NotVerboseEnough {};
         assert_eq!(nv.verbosity(), Some(Verbosity::High));
-        assert_eq!(nv.verbose_enough(), false);
+        assert!(!nv.verbose_enough());
     }
 }
