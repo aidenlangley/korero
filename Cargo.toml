@@ -8,7 +8,7 @@ homepage = "https://github.com/aidenlangley/korero"
 license = "MIT OR Apache-2.0"
 name = "korero"
 repository = "https://github.com/aidenlangley/korero"
-version = "0.1.1"
+version = "0.1.11"
 
 [dependencies]
 console = "0.15.0"
