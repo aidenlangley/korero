@@ -1,20 +1,19 @@
-use std::borrow::Cow;
-
 use reqwest::{blocking, Url};
-/** Use and re-export. */
 pub use reqwest::{Method, StatusCode};
-
 use serde::{Deserialize, Serialize};
 use serde_json::to_string;
+use std::borrow::Cow;
 
 pub trait Query {
-    /** Making HTTP request to this endpoint. */
+    /// Making HTTP request to this endpoint.
     fn endpoint(&self) -> Cow<'static, str>;
-    /** Optional. Array of key value pairs. */
+
+    /// Optional. Array of key value pairs.
     fn params(&self) -> QueryParams {
         QueryParams::default()
     }
-    /** Optional. Generally a `&'static str` serialized by `serde_json`. */
+
+    /// Optional. Generally a `&'static str` serialized by `serde_json`.
     fn body(&self) -> Result<Option<&'static str>, &'static str> {
         Ok(None)
     }
@@ -62,7 +61,8 @@ impl Reqwest {
 
     /** Initialise a `RequestBuilder` for given `method` & `url`. */
     pub fn init(&mut self, method: Method, endpoint: &str) -> &mut Self {
-        self.req_builder = Some(self.client.request(method, Self::parse_endpoint(endpoint)));
+        self.req_builder =
+            Some(self.client.request(method, Self::parse_endpoint(endpoint)));
         self
     }
 
@@ -80,7 +80,8 @@ impl Reqwest {
 
     /** Add JSON body to this `Request`. */
     pub fn add_body<T: Serialize>(&mut self, model: T) -> &mut Self {
-        let json = to_string(&model).expect("failed to serialize model to JSON");
+        let json =
+            to_string(&model).expect("failed to serialize model to JSON");
         self.req_builder = Some(self.get_req_builder().body(json.to_owned()));
         self
     }
@@ -93,7 +94,9 @@ impl Reqwest {
     }
 
     /** Send `Request` then parse and serialize `Response` to T. */
-    pub fn data<T: for<'de> Deserialize<'de>>(&mut self) -> Result<T, StatusCode> {
+    pub fn data<T: for<'de> Deserialize<'de>>(
+        &mut self,
+    ) -> Result<T, StatusCode> {
         let resp = self.send();
         let status = resp.status();
 

@@ -1,15 +1,17 @@
 [package]
 authors = ["Aiden Langley <me@aidenlangley.com>"]
+categories = [ "command-line-utilities", "web-programming::http-client" ]
 description = "Kōrero means to talk, speak or converse in Māori. This crate is a library for interfacing with things, just as kōrero helps people interface with one another."
-documentation = "https://github.com/aidenlangley/korero"
-edition = "2018"
+documentation = "https://docs.rs/korero"
+edition = "2021"
 homepage = "https://github.com/aidenlangley/korero"
 license = "MIT OR Apache-2.0"
 name = "korero"
 repository = "https://github.com/aidenlangley/korero"
-version = "0.1.0"
+version = "0.1.1"
 
 [dependencies]
-reqwest = {version = "0.11.3", features = ["blocking", "json"]}
-serde = {version = "1.0.126"}
-serde_json = "1.0.64"
+console = "0.15.0"
+reqwest = { version = "0.11", features = [ "blocking", "json" ] }
+serde = { version = "1.0.136", features = [ "derive" ] }
+serde_json = "1.0.79"
