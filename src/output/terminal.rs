@@ -25,7 +25,7 @@ mod tests {
     fn term_writes() {
         let test_term = TestTerminal {};
         if let Err(e) = test_term.term().write_line("Testing term!") {
-            assert!(false, "{}", e)
+            panic!("{}", e)
         }
     }
 
@@ -33,7 +33,7 @@ mod tests {
     fn err_writes() {
         let test_term = TestTerminal {};
         if let Err(e) = test_term.err().write_line("Testing err!") {
-            assert!(false, "{}", e)
+            panic!("{}", e)
         }
     }
 }

@@ -339,6 +339,7 @@ name = "korero"
 version = "0.1.12"
 dependencies = [
  "console",
+ "log",
  "reqwest",
  "serde",
  "serde_json",
